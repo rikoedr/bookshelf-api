@@ -1,0 +1,19 @@
+{
+  "name": "bookshelf-api",
+  "version": "1.0.0",
+  "description": "Bookshelf API with Hapi Framework",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "bookshelf",
+    "api",
+    "hapi-framework"
+  ],
+  "author": "rikoedr",
+  "license": "ISC",
+  "dependencies": {
+    "nanoid": "^4.0.2"
+  }
+}
