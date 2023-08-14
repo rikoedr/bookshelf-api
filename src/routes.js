@@ -1,6 +1,7 @@
 // Import Modules
 const addBookHandler = require('./handler/addBookHandler');
 const getAllBooksHandler = require('./handler/getAllBooksHandler');
+const getBookByIdHandler = require('./handler/getBookByIdHandler');
 
 const routes = [
   {
@@ -25,6 +26,11 @@ const routes = [
     method: 'GET',
     path: '/books',
     handler: getAllBooksHandler,
+  },
+  {
+    method: 'GET',
+    path: '/books/{id}',
+    handler: getBookByIdHandler,
   },
 ];
 

@@ -17,7 +17,7 @@ const addBookHandler = (request, h) => {
 
   const id = nanoid(16);
   const finished = pageCount === readPage;
-  const insertedAt = new Date().toISOString;
+  const insertedAt = new Date().toISOString();
   const updateAt = insertedAt;
 
   /* Books Information Check */
