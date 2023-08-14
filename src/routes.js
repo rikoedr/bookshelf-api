@@ -4,6 +4,7 @@ const getAllBooksHandler = require('./handler/getAllBooksHandler');
 const getBookByIdHandler = require('./handler/getBookByIdHandler');
 const updateBookHandler = require('./handler/updateBookHandler');
 const deleteBookHandler = require('./handler/deleteBookHandler');
+const getBookByNameHandler = require('./handler/getBookByNameHandler');
 
 const routes = [
   {
@@ -27,7 +28,17 @@ const routes = [
   {
     method: 'GET',
     path: '/books',
-    handler: getAllBooksHandler,
+    handler: (request, h) => {
+      const { query } = request;
+      const isQueryReqeust = !!(query.name || query.reading || query.finished);
+
+      if (!isQueryReqeust) {
+        return getAllBooksHandler(request, h);
+      }
+      if (query.name) {
+        return getBookByNameHandler(request, h);
+      }
+    },
   },
   {
     method: 'GET',
