@@ -2,6 +2,7 @@
 const addBookHandler = require('./handler/addBookHandler');
 const getAllBooksHandler = require('./handler/getAllBooksHandler');
 const getBookByIdHandler = require('./handler/getBookByIdHandler');
+const updateBookHandler = require('./handler/updateBookHandler');
 
 const routes = [
   {
@@ -31,6 +32,11 @@ const routes = [
     method: 'GET',
     path: '/books/{id}',
     handler: getBookByIdHandler,
+  },
+  {
+    method: 'PUT',
+    path: '/books/{id}',
+    handler: updateBookHandler,
   },
 ];
 
