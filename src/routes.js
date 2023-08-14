@@ -31,11 +31,7 @@ const routes = [
     path: '/books',
     handler: (request, h) => {
       const { query } = request;
-      const isQueryReqeust = !!(query.name || query.reading || query.finished);
 
-      if (!isQueryReqeust) {
-        return getAllBooksHandler(request, h);
-      }
       if (query.name) {
         return getBookByNameHandler(request, h);
       }
@@ -45,6 +41,7 @@ const routes = [
       if (query.finished) {
         return getBookByStatusHandler(request, h, 'finished');
       }
+      return getAllBooksHandler(request, h);
     },
   },
   {
