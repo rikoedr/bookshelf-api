@@ -1,5 +1,6 @@
 // Import Modules
 const addBookHandler = require('./handler/addBookHandler');
+const getAllBooksHandler = require('./handler/getAllBooksHandler');
 
 const routes = [
   {
@@ -19,6 +20,11 @@ const routes = [
     method: 'POST',
     path: '/books',
     handler: addBookHandler,
+  },
+  {
+    method: 'GET',
+    path: '/books',
+    handler: getAllBooksHandler,
   },
 ];
 
