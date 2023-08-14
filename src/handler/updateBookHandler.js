@@ -44,13 +44,13 @@ const updateBookHandler = (request, h) => {
       message: 'Gagal memperbarui buku. readPage tidak boleh lebih besar dari pageCount',
     });
 
-    response.code(201);
+    response.code(400);
     return response;
   }
 
   /* Books Information Approved */
   const index = books.findIndex((item) => item.id === id);
-  const updateAt = new Date().toISOString();
+  const updatedAt = new Date().toISOString();
 
   if (index !== -1) {
     books[index] = {
@@ -63,7 +63,7 @@ const updateBookHandler = (request, h) => {
       pageCount,
       readPage,
       reading,
-      updateAt,
+      updatedAt,
     };
   }
 

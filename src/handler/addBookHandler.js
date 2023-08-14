@@ -18,7 +18,7 @@ const addBookHandler = (request, h) => {
   const id = nanoid(16);
   const finished = pageCount === readPage;
   const insertedAt = new Date().toISOString();
-  const updateAt = insertedAt;
+  const updatedAt = insertedAt;
 
   /* Books Information Check */
   if (!name) {
@@ -37,7 +37,7 @@ const addBookHandler = (request, h) => {
       message: 'Gagal menambahkan buku. readPage tidak boleh lebih besar dari pageCount',
     });
 
-    response.code(201);
+    response.code(400);
     return response;
   }
 
@@ -54,7 +54,7 @@ const addBookHandler = (request, h) => {
     finished,
     reading,
     insertedAt,
-    updateAt,
+    updatedAt,
   };
 
   books.push(newBook);
