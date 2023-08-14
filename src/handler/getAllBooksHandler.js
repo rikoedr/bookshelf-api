@@ -7,6 +7,7 @@ const getAllBooksHandler = (request, h) => {
     id: book.id,
     name: book.name,
     publisher: book.publisher,
+
   }));
 
   const response = h.response({

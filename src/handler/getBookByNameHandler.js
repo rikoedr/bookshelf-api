@@ -34,7 +34,6 @@ const getBookByNameHandler = (request, h) => {
   const response = h.response({
     status: 'fail',
     message: 'Buku tidak ditemukan',
-    query: request.query.name,
   });
 
   response.code(404);

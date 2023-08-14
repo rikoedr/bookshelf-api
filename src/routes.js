@@ -5,6 +5,7 @@ const getBookByIdHandler = require('./handler/getBookByIdHandler');
 const updateBookHandler = require('./handler/updateBookHandler');
 const deleteBookHandler = require('./handler/deleteBookHandler');
 const getBookByNameHandler = require('./handler/getBookByNameHandler');
+const getBookByStatusHandler = require('./handler/getBookByStatusHandler');
 
 const routes = [
   {
@@ -37,6 +38,12 @@ const routes = [
       }
       if (query.name) {
         return getBookByNameHandler(request, h);
+      }
+      if (query.reading) {
+        return getBookByStatusHandler(request, h, 'reading');
+      }
+      if (query.finished) {
+        return getBookByStatusHandler(request, h, 'finished');
       }
     },
   },
