@@ -4,7 +4,8 @@
   "description": "Bookshelf API with Hapi Framework",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node ./src/server.js",
+    "lint": "eslint ./"
   },
   "keywords": [
     "bookshelf",
@@ -16,5 +17,10 @@
   "dependencies": {
     "@hapi/hapi": "^21.3.2",
     "nanoid": "^4.0.2"
+  },
+  "devDependencies": {
+    "eslint": "^8.47.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.28.0"
   }
 }
